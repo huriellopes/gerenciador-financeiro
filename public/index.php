@@ -15,8 +15,4 @@ $app->get('/', function() {
     echo "Hello World!";
 });
 
-$app->get('/home', function() {
-    echo "Hello World!";
-});
-
 $app->start();

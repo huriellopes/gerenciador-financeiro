@@ -1,0 +1,64 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row mt-5 mb-5" style="padding-top: 2%;">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            Administração de Categorias de Custo
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <a href="{{ route('category-costs.new') }}" class="btn btn-outline-primary">
+                                    <span class="fa fa-plus-circle"></span> Novo
+                                </a>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 10px;">#</th>
+                                            <th>Nome</th>
+                                            <th>Ações</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for category in categories %}
+                                        <tr>
+                                            <td>{{ category.id }}</td>
+                                            <td>{{ category.name }}</td>
+                                            <td>
+                                                <a href="{{ route('category-costs.edit',{'id': category.id}) }}" class="btn btn-outline-primary">
+                                                    <span class="fa fa-pencil-square-o"></span> Editar
+                                                </a>
+                                                |
+                                                <a href="{{ route('category-costs.show', {'id': category.id}) }}" class="btn btn-outline-danger">
+                                                    <span class="fa fa-trash-o"></span> Remove
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th style="width: 10px;">#</th>
+                                            <th>Nome</th>
+                                            <th>Ações</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

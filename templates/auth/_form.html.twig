@@ -1,0 +1,26 @@
+<form action="{{ action }}" method="post" autocomplete="off">
+
+    <div class="form-row">
+        <div class="col form-group">
+            <label>E-mail: </label>
+            <input type="email" name="email" class="form-control" required autofocus autocomplete="off"/>
+            <span class="help-block text-muted">Informe o Login</span>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col form-group">
+           <label>Password: </label>
+           <input type="password" name="password" class="form-control" required autocomplete="off"/>
+           <span class="help-block text-muted">Informe a Senha</span>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col form-group">
+            <button type="submit" class="btn btn-outline-primary btn-block">
+                {{ textName }}
+            </button>
+        </div>
+    </div>
+</form>

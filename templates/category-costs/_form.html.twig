@@ -1,0 +1,17 @@
+<form action="{{ action }}" method="post" autocomplete="off">
+    <div class="form-row">
+        <div class="col form-group">
+            <label>Categoria: </label>
+            <input type="text" name="name" class="form-control" value="{{ category.name }}" required autofocus autocomplete="off"/>
+            <span class="help-block text-muted">Informe o nome da categoria</span>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col form-group">
+            <button type="submit" class="btn btn-outline-primary">
+                <span class="fa fa-{{ submitIcon }}"></span> {{ textName }}
+            </button>
+        </div>
+    </div>
+</form>

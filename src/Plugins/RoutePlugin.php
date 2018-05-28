@@ -29,7 +29,7 @@ class RoutePlugin implements PluginInterface
         $container->addLazy('route', function (ContainerInterface $container) {
             $matcher = $container->get('routing.matcher');
             $request = $container->get(RequestInterface::class);
-            $matcher->match($request);
+            return $matcher->match($request);
         });
     }
 

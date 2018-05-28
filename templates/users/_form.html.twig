@@ -1,0 +1,39 @@
+<form action="{{ action }}" method="post" autocomplete="off">
+    <div class="form-row">
+        <div class="col form-group">
+            <label>Nome: </label>
+            <input type="text" name="first_name" class="form-control" value="{{ user.first_name }}" required autocomplete="off" autofocus/>
+            <span class="help-block text-muted">Informe o nome</span>
+        </div>
+
+        <div class="col form-group">
+            <label>Sobrenome: </label>
+            <input type="text" name="last_name" class="form-control" value="{{ user.last_name }}" required autocomplete="off"/>
+            <span class="help-block text-muted">Informe o sobrenome</span>
+        </div>
+    </div>
+
+    <div class="form-row">
+
+        <div class="col form-group">
+            <label>E-mail: </label>
+            <input type="email" name="email" class="form-control" value="{{ user.email }}" required autocomplete="off"/>
+            <span class="help-block text-muted">Informe o nome do Usuário</span>
+        </div>
+        {% if user.id is null %}
+        <div class="col form-group">
+            <label>Password: </label>
+            <input type="password" name="password" class="form-control" required autocomplete="off"/>
+            <span class="help-block text-muted">Informe a Senha</span>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="form-row">
+        <div class="col form-group">
+            <button type="submit" class="btn btn-outline-primary">
+                <span class="fa fa-{{ submitIcon }}"></span> {{ textName }}
+            </button>
+        </div>
+    </div>
+</form>
